@@ -1,5 +1,5 @@
 # SET ENVIRONMENT TO WORKING DIRECTORY
-setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY")
+setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity")
 
 # DO NOT RUN... LOAD RDATA AND RUN THE OTHER R FILES
 # THIS FILE ONLY CREATES RDATA FILES FROM RAW DATA
@@ -9,8 +9,8 @@ setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCIT
 
 library(sf)
 # READ BORROUGH AND NEIGHBORHOOD SHAPE FILES AS SIMPLE FEATURES
-alcaldias <- st_read("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/gis_data/ALCALDIAS/ALCALDIAS.shp")
-colonias <- st_read("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/gis_data/COLONIAS/densidad_vivha/ri_11.shp")
+alcaldias <- st_read("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/gis_data/ALCALDIAS/ALCALDIAS.shp")
+colonias <- st_read("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/gis_data/COLONIAS/densidad_vivha/ri_11.shp")
 
 # TRANSFORM BORROUGH NAMES TO UPER AND REMOVE ACCENTS
 alcaldias$NOM_MUN <- toupper(alcaldias$NOM_MUN)
@@ -25,7 +25,7 @@ rm(alcaldias)
 rm(colonias)
 
 # CHANGE LOCATION TO DIRECTORY WHERE DATA IS CONTAINED
-data_directory <- "~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/raw_data/"
+data_directory <- "~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/raw_data/"
 file_name <- paste0(data_directory, "denue_inegi_09_2021.csv", sep = "")
 
 denue_data <- read.csv(file = file_name, header=TRUE, fileEncoding="latin1")
@@ -120,10 +120,10 @@ denue_data <- read.csv(file = file_name, header=TRUE, fileEncoding="latin1")
     denue_data$FWI_score <- as.numeric(denue_data$FACTOR_EMP) * as.numeric(denue_data$FACTOR_SIT)
     
     # SAVE R DATA FROM GLOBAL ENVIRONMENT FOR FASTER LOADING TIMES IN FUTURE
-    setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData")
+    setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData")
     save(alcaldias, colonias, file = "spatial_data.RData")
     save(denue_data, file = "denue_data.RData")
-    setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY")
+    setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity")
     
     # GLOBAL ENVIRONMENT CLEAN UP
     rm(denue_data, data_directory, file_name, i)

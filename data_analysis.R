@@ -1,9 +1,9 @@
 # SET ENVIRONMENT TO WORKING DIRECTORY
 # LOAD R DATA FROM DATA PREP PROCESSING
- load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData/spatial_data.RData")
- load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData/denue_data.RData")
+ load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData/spatial_data.RData")
+ load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData/denue_data.RData")
  
-setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY")
+setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity")
 
 # denue_data <- denue_dataB
 
@@ -36,9 +36,9 @@ for(n in 1:nrow(denue_data_foodscape)){
 }
 
 # SAVE R DATA FROM GLOBAL ENVIRONMENT FOR FASTER LOADING TIMES IN FUTURE
-setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData")
+setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData")
 save(denue_data_foodscape, file = "foodscape_data.RData")
-setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY")
+setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity")
 
 library(dplyr)
 # ONE VARIABLE MELTS

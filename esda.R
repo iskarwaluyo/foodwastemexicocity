@@ -1,7 +1,7 @@
 # LOAD DATA
- load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData/spatial_data.RData")
- load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData/denue_data.RData")
- load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RData/foodscape_data.RData")
+ load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData/spatial_data.RData")
+ load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData/denue_data.RData")
+ load("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RData/foodscape_data.RData")
 
 # TRANSFORM DATA FRAME TO SPATIAL SIMPLE FEATURES DATAFRAME USING SF PACKAGE
 
@@ -155,9 +155,9 @@ lisa_function <- function(simple_features_name, file_name){
 }
 
 file_save <- function(file_name){
-  folder <- c("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RESULTS/")
+  folder <- c("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RESULTS/")
   file_name_save <- paste0(folder, file_name, ".shp", sep="")
-  setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/FOODWASTEMEXICOCITY/DATA/RESULTS")
+  setwd("~/sigdata/1BB596AA0B7E98241/archivos/sigdata/PROYECTOS/foodwastemexicocity/DATA/RESULTS")
   st_write(shape_select, file_name_save)
 }
 
