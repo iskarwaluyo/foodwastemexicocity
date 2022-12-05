@@ -10,13 +10,14 @@ While formal definitions of food systems may vary, in general they include the w
 - data_analysis.R - Analyzes data and creates plots
 - esda.R - Creates more plots and runs autocorrelation processes with rgeoda package. Also creates shape files of results.
 - scratch.R - scratch file to try code
-- foodwastemexicocity_DATA - contains raw data, gis data, resulting shape files and RData files
+- foodwastemexicocity_DATA.zip - contains raw data, gis data, resulting shape files and RData files
+- README.md - this text
 
 ## Deployment
 
 Before running remember to:
 
-- Decompress "DATA.zip"
+- Decompress "foodwastemexicocity_DATA.zip"
 - Decompress all ZIP files in the "RData" directory
 - Rename directory where needed
 
